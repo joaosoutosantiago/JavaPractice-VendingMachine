@@ -20,10 +20,7 @@ public class Main {
         
         Machine machine = new Machine(items);
         
-        Item item = machine.getItems(2, 1);
-        item.setPrice(2.99);
-        
-        System.out.println(item);
+        System.out.println(machine);
         
         scan.close();
 

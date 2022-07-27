@@ -22,4 +22,37 @@ public class Machine {
 		}
 	}
 	
+    /**
+     * Function name -- dispense
+     * @param row (int)
+     * @param spot (int)
+     * @return (boolean)
+     *
+     * Inside the function:
+     *  1. Checks if the requested item has a quantity bigger than 0.
+     * - if so: decreases its quantity by one and returns true.
+     * - otherwise: returns false.
+     */
+	
+	public boolean dispense(int row, int spot) {
+		if (this.Items[row][spot].getQuantity() > 0) {
+			this.Items[row][spot].setQuantity(this.Items[row][spot].getQuantity() - 1);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public String toString() {
+		
+		String menu = "\n\t";
+		for (int i = 0; i < Items.length; i++) {
+			for (int j = 0; j < Items[i].length; j++) {
+				menu += this.Items[i][j].toString() + " ";
+			}
+			menu += "\n\n\t";
+		}
+		menu += "************************************************\n";
+		return menu;
+	}
 }
