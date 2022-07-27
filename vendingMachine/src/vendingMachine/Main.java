@@ -22,9 +22,8 @@ public class Main {
         
         System.out.println(machine);
         
-        boolean isOn = true;
-        
-        while (isOn) {
+      
+        while (true) {
             System.out.print("Pick a row: ");
             int userRow = scan.nextInt();
             System.out.print("pick a spot: ");
@@ -36,7 +35,7 @@ public class Main {
             	int more = scan.nextInt();
             	if (more != 1) {
             		System.out.println("Thanks for using the Java vending machine.");
-            		isOn = false;
+            		break;
             	} else {
             		System.out.println(machine);
             	}
@@ -45,7 +44,7 @@ public class Main {
             	int more = scan.nextInt();
             	if (more != 1) {
             		System.out.println("Thanks for using the Java vending machine.");
-            		isOn = false;
+            		break;
             	} else {
             		System.out.println(machine);
             	}
