@@ -22,6 +22,36 @@ public class Main {
         
         System.out.println(machine);
         
+        boolean isOn = true;
+        
+        while (isOn) {
+            System.out.print("Pick a row: ");
+            int userRow = scan.nextInt();
+            System.out.print("pick a spot: ");
+            int userSpot = scan.nextInt();
+            scan.nextLine();
+            
+            if (machine.dispense(userRow, userSpot)) {
+            	System.out.println("\nEnjoy your drink! Press 1 to purchase another.");
+            	int more = scan.nextInt();
+            	if (more != 1) {
+            		System.out.println("Thanks for using the Java vending machine.");
+            		isOn = false;
+            	} else {
+            		System.out.println(machine);
+            	}
+            } else {
+            	System.out.println("\nSorry. We're out of this item. Press 1 to purchase another.");
+            	int more = scan.nextInt();
+            	if (more != 1) {
+            		System.out.println("Thanks for using the Java vending machine.");
+            		isOn = false;
+            	} else {
+            		System.out.println(machine);
+            	}
+            }
+        }
+                
         scan.close();
 
 	}
